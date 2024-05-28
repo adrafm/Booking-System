@@ -57,6 +57,5 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 *.eslintrc.js
 *.prettierrc
-nest-cli.json
 pnpm-lock.yaml
 
