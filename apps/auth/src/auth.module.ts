@@ -6,6 +6,7 @@ import { LoggerModule } from '@app/common';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as Joi from 'joi';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -14,7 +15,10 @@ import * as Joi from 'joi';
     ConfigModule.forRoot({
       isGlobal: true,
       validationSchema: Joi.object({
-        MONGODB_URI: Joi.string().required()
+        MONGODB_URI: Joi.string().required(),
+        JWT_SERCRET: Joi.string().required(),
+        JWT_EXPIRATION: Joi.string().required(),
+        PORT: Joi.number().required()
       })
     }),
     JwtModule.registerAsync({
